@@ -13,7 +13,7 @@ export default function PersonCard(props){
                 </div>
                 <div className="secondpart">
                     <p>{props.description}</p>
-                    <a href={props.goToRep}  target="blank"  style={{color:"navy"}}>
+                    <a href={props.goToRep}  target="blank"  style={{color:"navy"}}  className="github">
                         <FaGithub style={{ width: "60px", height: "60px" }} />
                     </a>
                 </div>

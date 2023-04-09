@@ -1,0 +1,29 @@
+.hotel{
+    /* margin-top: 100px; */
+    box-shadow: 1px 1px 5px rgba(190, 175, 249, 0.212),  -1px -1px 5px rgba(138, 130, 170, 0.212);
+    width: 430px;
+    height: 350px;
+    border-radius: 20px;
+
+}
+
+.img2{
+    margin-top: 20px;
+    width:380px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.second{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    margin-left: 20px;
+}
