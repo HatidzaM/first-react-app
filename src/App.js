@@ -48,7 +48,7 @@ function App() {
 
         <div 
         style={{
-          marginTop:"60px",
+          marginTop:"100px",
           display:"grid",
           gridTemplateColumns:"repeat(3, 430px)",
           justifyContent:"center",
