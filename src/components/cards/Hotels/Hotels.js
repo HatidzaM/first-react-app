@@ -4,7 +4,7 @@ import { FaStarHalf } from "react-icons/fa";
 
 export default function Hotels(props){
     const onestar = <span>⭐</span>;
-    const halfstar = <span style={{ colour:"yellow", fontSize:"1rem" }}><FaStarHalf/></span>
+    const halfstar = <span><FaStarHalf style={{ colour:"yellow", fontSize:"1rem" }}/></span>
     const stars = (num) =>{
         const arr = [];
         for(let i=1; i<= num; i++){

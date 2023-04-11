@@ -68,12 +68,12 @@ function App() {
         </div>
 
         <div className="formContainer">
-          {/* <form onSubmit= { (event)=> { event.preventDefault }} > */}
+          <form onSubmit= { (event)=> { event.preventDefault }} >
             <label htmlFor="firstName">Unesite vase ime</label>
             <input  type="text"  id="firstName"  name="firstName"  required  value={"ime"}  // /innerText = {"ime"}
             onchange={(event)=>{
               console.log(event);
-              // setName(event.target.value);
+              setName(event.target.value);
             }}/>
             <label htmlFor="lastName">Unesite vase prezime</label>
             <input  type="text"  id="lastName"  name="lastName"  required  value={"ime"}  onchange={()=>{}}/>
@@ -92,7 +92,7 @@ function App() {
             <br/>
             <br/>
             <button type="submit">Potvrdi</button>
-          {/* </form> */}
+          </form>
         </div>
       </div>
     </>
