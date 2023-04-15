@@ -7,7 +7,7 @@
 }
 
 .formContainer{
-  width: 50%;
+  width: 30%;
   padding: 30px;
   border-radius: 20px;
   margin: auto;
@@ -17,4 +17,9 @@
   font-weight: 700;
   display: flex;
   justify-content: center;
+}
+.formContainer input{
+position: relative;
+left: 15px;
+  /* margin-right: 550px; */
 }

@@ -1,5 +1,6 @@
 [
     {
+    "id":1,
     "imageURL":"https://cf.bstatic.com/xdata/images/hotel/max300/273076792.jpg?k=5cb683ba5db555146e2a471941e7fdecf7eb86754f97c11e45e683004d70e19a&o=&hp=1",
     "name" : "Vrbak",
     "location" : "NOVI PAZAR, SERBIA",
@@ -9,6 +10,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":2,
     "imageURL":"https://i0.wp.com/www.snews.rs/wp-content/uploads/2021/12/IMG_9786.jpg?resize=660%2C442&ssl=1",
     "name" : "Hotel Ras",
     "location" : "NOVI PAZAR, SERBIJA",
@@ -18,6 +20,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":3,
     "imageURL":"https://aqua-spa-termale-novi-pazar.ibooked.at/data/Photos/OriginalPhoto/10322/1032240/1032240221/Aqua-Spa-Termale-Novi-Pazar-Exterior.JPEG",
     "name" : "Titanik",
     "location" : "NOVI PAZAR, SERBIJA",
@@ -27,6 +30,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":4,
     "imageURL":"https://www.moja-delatnost.rs/Image/IndexFile?name=Sme%C5%A1taj-gostiju-sa-spa-centrom-Banja1.jpg",
     "name" : "Emrovic Raj",
     "location" : "NOVI PAZAR, SERBIJA",
@@ -36,6 +40,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":5,
     "imageURL":"https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/124485747.jpg?k=ab150b3b13b02464c091c465f9802bda67f11fcd6d11a856003dc21bc1916651&o=",
     "name" : "Atlas",
     "location" : "NOVI PAZAR, SERBIJA",
@@ -45,6 +50,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":6,
     "imageURL":"https://cf.bstatic.com/xdata/images/hotel/max1024x768/387918910.jpg?k=d1eccb6b472747d7d22ba03659d024873db682c7041954d2228da055337b9bcd&o=&hp=1",
     "name" : "Pasa",
     "location" : "NOVI PAZAR, SERBIJA",
@@ -54,6 +60,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":7,
     "imageURL":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnkh8DRX4OXu0bWyPSVZxdG6PV0tqYMEkG5DtrKEfCRbfIl_0seZ10znD9Dgdi04v2W8s&usqp=CAU",
     "name" : "Hotel S",
     "location" : "NOVI PAZAR, SERBIJA",
@@ -63,6 +70,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":8,
     "imageURL":"https://www.turistickiklub.com/upload/hoteli/2905151306_palma.jpg",
     "name" : "Palma",
     "location" : "NOVI PAZAR, SERBIJA",
@@ -72,6 +80,7 @@
     "reviews": "11,820 reviews"
     },
     {
+    "id":9,
     "imageURL":"https://hotelskismestaj.com/wp-content/uploads/2016/05/Hotel-Tadz-2-333x185.jpg",
     "name" : "Tadz",
     "location" : "NOVI PAZAR, SERBIJA",
