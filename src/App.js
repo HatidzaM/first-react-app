@@ -6,7 +6,20 @@ import PersonCard from "./components/cards/PersonCard/PersonCard";
 import persons from "./common/persons.json";
 import Hotels from "./components/cards/Hotels/Hotels";
 import hotels from "./common/hotels.json";
-import Form from "./components/Form/Form"
+import Form from "./components/Form/Form";
+import teams from "./common/teams.json";
+import TeamCard from "./components/cards/TeamCards/TeamCards";
+
+
+
+const poruke = [
+  "Danas je subota",
+  "U subotu je lepo vreme",
+  "Subota je dan za odmor",
+  "Subota je dan za kupovinu",
+  "Subota je dan za druzenje",
+  "Subota je dan za kafu",
+];
 
 
 function App() {
@@ -39,6 +52,13 @@ function App() {
   //   hobi:"",
   // });
 
+  const [arr, setArr] = useState(poruke);
+  const reverseArr = () => {
+    const _arr = [...arr];
+    const reversed = _arr.reverse();
+    setArr(reversed);
+  };
+
   return (
     <> {/* fragment - najcesce se koristi sa wrapovanje*/}
       <div className="App">
@@ -55,6 +75,7 @@ function App() {
         }}>
           {persons.map((person)=>
           <PersonCard
+          key={person.id}
           imageURL={person.imageURL}
           fullName = {person.fullName}
           location = {person.location}
@@ -74,14 +95,8 @@ function App() {
         }}>
           {hotels.map((hotel)=>
           <Hotels
+          key={hotel.id}
           imageURL={hotel.imageURL}
-          // key={hotel.name}
-          // key={hotel.location}
-          // key={hotel.stars}
-          // key={hotel.description}
-          // key={hotel.rating}
-          // key={hotel.reviews}
-          
           name={hotel.name}
           location={hotel.location}
           stars={hotel.stars}
@@ -152,6 +167,31 @@ function App() {
           </form>
         </div> */}
         <Form/>
+
+        <div
+          style={{
+            height: "200px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "10px",
+          }}
+        >
+          <button
+            onClick={() => {
+              reverseArr();
+              console.log("okrenuo se niz");
+            }}>
+            Promeni raspored poruka </button>
+            {arr.map((poruka) => (
+            <p>{poruka}</p>
+          ))}
+        </div>
+        <TeamCard />
+        <TeamCard />
+        <TeamCard />
+        <TeamCard />
       </div>
     </>
   );

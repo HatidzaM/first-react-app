@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 
-function Form(props){
+function Form(){
+
+  // 1. nacin - za svako input polje poseban state
+  // const [name, setName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [hobby, setHobby] = useState("");
+  // const [phone, setPhone] = useState("+381");
+
+  // 2. jedan state za sva input polja
     const [userInput, setUserInput] = useState({
         name:"",
         lastName:"",
@@ -9,12 +18,17 @@ function Form(props){
         phone:"",
         hobi:"",
       });
+
     return(
         <div className="formContainer">
           <form onSubmit= { (event)=> {
-            // event.preventDefault();
-            // console.log({name});
-            // console.log("lastName", lastName)
+            event.preventDefault();
+            // console.log({ name });
+            // console.log("lastName", lastName);
+            // console.log({ email });
+            // console.log({ hobby });
+            // console.log({ phone });
+            console.log({ userInput });
           }} 
             >
             <label htmlFor="firstName">Unesite vase ime</label>
@@ -23,8 +37,7 @@ function Form(props){
               // console.log(event);
               // setName(event.target.value);
               setUserInput((prev)=>({
-                // lastName: prev.lastName,
-                ...prev,
+                ...prev,  // lastName: prev.lastName,
                 name: event.target.value,
               }))
             }}/>
