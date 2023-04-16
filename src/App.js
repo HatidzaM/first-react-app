@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
-import Greeting from "./components/Greeting";
+import Greeting from "./components/Greeting/Greeting";
 import { Navbar } from "./components/Navbar/Navbar";
 import PersonCard from "./components/cards/PersonCard/PersonCard";
 import persons from "./common/persons.json";
