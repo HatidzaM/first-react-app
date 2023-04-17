@@ -7,8 +7,9 @@ import persons from "./common/persons.json";
 import Hotels from "./components/cards/Hotels/Hotels";
 import hotels from "./common/hotels.json";
 import Form from "./components/Form/Form";
-import teams from "./common/teams.json";
+import teamsJSON from "./common/teams.json";
 import TeamCard from "./components/cards/TeamCards/TeamCards";
+import { useEffect } from "react";
 
 
 
@@ -21,6 +22,7 @@ const poruke = [
   "Subota je dan za kafu",
 ];
 
+const BASE_URL = "https://api.quotable.io";
 
 function App() {
   /// const [count, setCount] = React.useState(0);
@@ -58,6 +60,37 @@ function App() {
     const reversed = _arr.reverse();
     setArr(reversed);
   };
+
+  const [teams, setTeams]= useState(teamsJSON);
+  console.log(teams);
+
+  //brisanje tima:
+  const deleteTeam = (id)=>{
+    const filteredTeam = teams.filter((team) => team.id !== id);
+    setTeams(filteredTeam)
+  }
+
+
+  const [quotes, setQuotes] = useState([]);
+  const [page, setPage] = useState(2);
+
+  const getQuotes = async()=>{
+    // const quotes = await fetch( `${BASE_URL} /quotes?page=${page}&tags=love|technology` )
+    const getQuotes = await fetch( `${BASE_URL} /quotes?page=2&tags=love|technology` )
+    const data = await quotes.json();
+    const results = data.results;
+    
+    setQuotes(results); //kao asinhrona
+    console.log(data)
+    //console.log(quotes); vraca prazan niz
+  }
+  // getQuotes();
+  console.log(quotes[0]?.content);
+  
+
+  useEffect(()=>{
+    getQuotes();
+  }, [])
 
   return (
     <> {/* fragment - najcesce se koristi sa wrapovanje*/}
@@ -128,10 +161,17 @@ function App() {
             <p>{poruka}</p>
           ))}
         </div>
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
+        
+        {
+          teams.map((team)=>(
+            <TeamCard 
+            key={team.id}
+            name={team.name}
+            matches={team.matches}
+            points={team.matches} 
+            deleteTeam={()=> deleteTeam(team.id)}/>
+          ))
+        }
       </div>
     </>
   );

@@ -1,13 +1,15 @@
 import React from "react";
 import "./TeamCards.css";
+// import {BASE_URL} from "./App.js";
 
-function TeamCard(props){
+function TeamCard({name, matches, points, deleteTeam}){
+    // console.log({BASE_URL})
     return (<div className="cardContainer">
         <div className="card2">
-        <p>{props.name}aaa</p>
-        <p>{props.matches}lll</p>
-        <p>{props.points}eee</p>
-        <button onClick={props.deleteTeam}>Izbrisi tim</button>
+        <p>{name}</p>
+        <p>Broj odigranih meceva: {matches}</p>
+        <p>Broj poena: {points}</p>
+        <button onClick={deleteTeam}>Izbrisi tim</button>
         </div>
     </div>
     );
