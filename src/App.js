@@ -90,7 +90,7 @@ function App() {
 
   useEffect(()=>{
     getQuotes();
-  }, [])
+  }, [page])
 
   return (
     <> {/* fragment - najcesce se koristi sa wrapovanje*/}
