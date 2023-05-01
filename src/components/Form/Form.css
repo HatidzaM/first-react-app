@@ -1,6 +1,29 @@
+/* 
 .formContainer {
     width: 40%;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 50px;
+}
+
+.formContainer input{
+    position: relative;
+    left: 15px;
+    } */
+
+.formContainer{
+    width: 30%;
+    padding: 30px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 130px;
+    margin-bottom: 50px;
+    background-color: rgb(181, 181, 248);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+}
+.formContainer input{
+    position: relative;
+    left: 15px;
 }

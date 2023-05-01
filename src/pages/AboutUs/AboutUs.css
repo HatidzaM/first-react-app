@@ -1,0 +1,8 @@
+.about-us-container {
+    margin-left: "";
+    display: grid;
+    grid-template-columns: repeat(4, 330px);
+    justify-content: center;
+    grid-auto-rows: minmax(420px, auto);
+    grid-gap: 40px;
+}

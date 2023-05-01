@@ -1,0 +1,8 @@
+.hotels{
+    margin-Top:"100px";
+    display:"grid";
+    grid-template-columns:"repeat(3, 430px)";
+    justify-content:"center";
+    grid-auto-rows:"minmax(280px, auto)";
+    grid-gap:"45px"
+}

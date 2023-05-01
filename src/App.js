@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import './App.css';
-import Greeting from "./components/Greeting/Greeting";
 import { Navbar } from "./components/Navbar/Navbar";
-import PersonCard from "./components/cards/PersonCard/PersonCard";
-import persons from "./common/persons.json";
-import Hotels from "./components/cards/Hotels/Hotels";
-import hotels from "./common/hotels.json";
+// import Greeting from "./components/Greeting/Greeting";
+// import PersonCard from "./components/cards/PersonCard/PersonCard";
+// import persons from "./common/persons.json";
+// import HotelCard from "./components/cards/HotelCard/HotelCard";
+// import hotels from "./common/hotels.json";
+// import Form from "./components/Form/Form";
+// import teamsJSON from "./common/teams.json";
+// import TeamCard from "./components/cards/TeamCards/TeamCards";
+// import { useEffect } from "react";
 import Form from "./components/Form/Form";
-import teamsJSON from "./common/teams.json";
-import TeamCard from "./components/cards/TeamCards/TeamCards";
-import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Hotels from "./pages/Hotels/Hotels";
+import Teams from "./pages/Teams/Teams";
+import Quotes from "./pages/Quotes/Quotes";
 
 
 
@@ -61,15 +67,6 @@ function App() {
     setArr(reversed);
   };
 
-  const [teams, setTeams]= useState(teamsJSON);
-  console.log(teams);
-
-  //brisanje tima:
-  const deleteTeam = (id)=>{
-    const filteredTeam = teams.filter((team) => team.id !== id);
-    setTeams(filteredTeam)
-  }
-
 
   const [quotes, setQuotes] = useState([]);
   const [page, setPage] = useState(2);
@@ -97,7 +94,7 @@ function App() {
       <div className="App">
         <Navbar> {/* <P>samo za primer</P> */} </Navbar>
          <Greeting appName={"my first app"} username={"Hatidza Mahmutovic"} />
-        <div 
+        {/* <div 
         style={{
           marginLeft:"",
           display:"grid",
@@ -115,9 +112,9 @@ function App() {
           description = {person.description}
           goToRep = {person.goToRep}
           />)}          
-        </div>
+        </div> */}
 
-        <div 
+        {/* <div 
         style={{
           marginTop:"100px",
           display:"grid",
@@ -137,7 +134,7 @@ function App() {
           rating={hotel.rating}
           reviews={hotel.reviews}
           />)}
-        </div>
+        </div> */}
 
          <Form/>
 
@@ -161,7 +158,7 @@ function App() {
             <p>{poruka}</p>
           ))}
         </div>
-        
+{/*         
         {
           teams.map((team)=>(
             <TeamCard 
@@ -171,8 +168,16 @@ function App() {
             points={team.matches} 
             deleteTeam={()=> deleteTeam(team.id)}/>
           ))
-        }
+        } */}
       </div>
+
+      <Routes>
+        <Route path="/" element={<Form />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/hotels" element={<Hotels />} />
+        <Route path="/teams" element={<Teams />} />
+        <Route path="/quotes" element={<Quotes />} />
+      </Routes>
     </>
   );
 }

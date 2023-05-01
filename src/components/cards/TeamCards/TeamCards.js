@@ -4,7 +4,7 @@ import "./TeamCards.css";
 
 function TeamCard({name, matches, points, deleteTeam}){
     // console.log({BASE_URL})
-    return (<div className="cardContainer">
+    return (<div className="cardContainer2">
         <div className="card2">
         <p>{name}</p>
         <p>Broj odigranih meceva: {matches}</p>
