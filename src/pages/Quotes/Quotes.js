@@ -3,7 +3,7 @@ import QuoteCard from "../../components/cards/QuoteCard/QuoteCard";
 import Pagination from "../../components/Pagination/Pagination";
 import "./Quotes.css";
 import { BASE_URL } from "../../App";
-import Spinner from "../../components/Spinner/Spinner";
+import Spinner from "../../components/Spiner/Spiner";
 
 export default function Quotes() {
     const [quotes, setQuotes] = useState([]);

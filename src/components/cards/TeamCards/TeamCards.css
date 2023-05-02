@@ -40,3 +40,8 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.info{
+    width: 100%;
+    text-align: center;
+}

@@ -24,6 +24,7 @@ export default function Teams() {
             matches={team.matches}
             points={team.points}
             deleteTeam={() => deleteTeam(team.id)}
+            information={team.information}
         />
         ))}
         <Link to={"/quotes"}>Vidi citate</Link>

@@ -3,7 +3,8 @@
       "id": 1,
       "name": "Arsenal",
       "points": 72,
-      "matches": 30
+      "matches": 30,
+      "information":"treci najuspesniji klub u engleskoj"
     },
     {
       "id": 2,
@@ -21,7 +22,8 @@
       "id": 4,
       "name": "Liverpool",
       "points": 51,
-      "matches": 29
+      "matches": 29,
+      "information":"najuspesniji klub u engleskoj"
     },
     {
       "id": 5,
