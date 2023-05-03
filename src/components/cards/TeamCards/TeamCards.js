@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./TeamCards.css";
-// import {BASE_URL} from "./App.js";
+// import {BASE_URL} from "./App.js";/
 
 function TeamCard({name, matches, points, deleteTeam, information, id}){
     const [closed, setClosed] = useState(true)
