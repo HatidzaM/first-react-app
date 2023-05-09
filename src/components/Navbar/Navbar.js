@@ -26,6 +26,18 @@ function Navbar(props) {
         >
         <h1 style={{ fontFamily: "Arial" }}>Logo</h1>
       </NavLink>
+      <NavLink
+        to={"/login"}
+        style={({ isActive }) => (isActive ? acitveStyles : styles)}
+      >
+        <h1 style={{ fontFamily: "Arial" }}>Login</h1>
+      </NavLink>
+      <NavLink
+        to={"/register"}
+        style={({ isActive }) => (isActive ? acitveStyles : styles)}
+      >
+        <h1 style={{ fontFamily: "Arial" }}>Register</h1>
+      </NavLink>
         <NavLink
           to={"/about-us"}
           style={({ isActive }) => (isActive ? acitveStyles : styles)}
