@@ -1,17 +1,27 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Login.css";
 import axios from "axios";
+import { BASE_URL } from "../../config/api";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../context/AppContext";
+
 export function Login() {
+  const navigation = useNavigate();
+  const { setToken } = useContext(AppContext);
+
   async function loginUser(data) {
     try {
-      const user = await axios.post(
-        "https://nit-backend.onrender.com/users/login",
-        data
-      );
+      const user = await axios.post(`${BASE_URL}/users/login`, data);
       const userInfo = await user.data;
       console.log(userInfo);
+      // console.log(userInfo.token);
+      localStorage.setItem("token", userInfo.token);
+      setToken(userInfo.token);
+      navigation("/");
     } catch (err) {
       console.log(err.response.data.err);
+      localStorage.removeItem("token");
+      setToken(null);
     }
   }
 
