@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Teams.css";
-import TeamCard from "../../components/Cards/TeamCard/TeamCard";
+import TeamCard from "../../components/cards/TeamCard/TeamCard";
 import teamsJSON from "../../common/teams.json";
 import { Link, useNavigate } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import React from "react";
-import HotelCard from "./components/cards/HotelCard/HotelCard";
-import hotels from "./common/hotels.json";
-import "/Hotels.css";
+import HotelCard from "../../components/cards/HotelCard/HotelCard";
+import hotels from "../../common/hotels.json";
+import "./Hotels.css";
 
 export default function Hotels(){
     return(

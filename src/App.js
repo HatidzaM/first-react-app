@@ -19,6 +19,7 @@ import Quotes from "./pages/Quotes/Quotes";
 import Hotel from "./pages/hotel/Hotel";
 import { Register } from "./pages/Register/Register";
 import { Login } from "./pages/Login/Login";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 
 
@@ -178,11 +179,11 @@ function App() {
         <Route path="/" element={<Form />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/teams" element={<Teams />} />
-        <Route path="/quotes" element={<Quotes />} />
-        <Route path="/hotels/:id" element={<Hotel />} />
+        <Route path="/about-us" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
+        <Route path="/hotels" element={<ProtectedRoute><Hotels /></ProtectedRoute>} />
+        <Route path="/teams" element={<ProtectedRoute><Teams /></ProtectedRoute>} />
+        <Route path="/quotes" element={<ProtectedRoute><Quotes /></ProtectedRoute>} />
+        <Route path="/hotels/:id" element={<ProtectedRoute><Hotel /></ProtectedRoute>} />
       </Routes>
     </>
   );
