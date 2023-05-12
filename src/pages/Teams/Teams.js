@@ -1,34 +1,37 @@
 import React, { useState } from "react";
 import "./Teams.css";
-import TeamCard from "../../components/cards/TeamCard/TeamCard";
+import TeamCard from "../../components/cards/TeamCards/TeamCards";
 import teamsJSON from "../../common/teams.json";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Teams() {
     const navigation = useNavigate();
     const [teams, setTeams] = useState(teamsJSON);
+    const [extended, setExtended] = useState(null);
     console.log(teams);
 
-  // Brisanje tima:
+    // Brisanje tima:
     const deleteTeam = (id) => {
-    const filteredTeams = teams.filter((team) => team.id !== id);
-    setTeams(filteredTeams);
+        const filteredTeams = teams.filter((team) => team.id !== id);
+        setTeams(filteredTeams);
     };
-
     return (
-    <div>
+     <div>
         {teams.map((team) => (
-         <TeamCard
+          <TeamCard
             key={team.id}
             name={team.name}
             matches={team.matches}
             points={team.points}
             deleteTeam={() => deleteTeam(team.id)}
+            extended={extended}
+            setExtended={setExtended}
             information={team.information}
-        />
+            id={team.id}
+          />
         ))}
         <Link to={"/quotes"}>Vidi citate</Link>
         <button onClick={() => navigation("/hotels")}>Hotels</button>
-    </div>
+      </div>
     );
 }

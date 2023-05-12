@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './App.css';
 import { Navbar } from "./components/Navbar/Navbar";
 // import Greeting from "./components/Greeting/Greeting";
@@ -19,20 +19,21 @@ import Quotes from "./pages/Quotes/Quotes";
 import Hotel from "./pages/hotel/Hotel";
 import { Register } from "./pages/Register/Register";
 import { Login } from "./pages/Login/Login";
+import { AppContext } from "./context/AppContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 
 
-const poruke = [
-  "Danas je subota",
-  "U subotu je lepo vreme",
-  "Subota je dan za odmor",
-  "Subota je dan za kupovinu",
-  "Subota je dan za druzenje",
-  "Subota je dan za kafu",
-];
+// const poruke = [
+//   "Danas je subota",
+//   "U subotu je lepo vreme",
+//   "Subota je dan za odmor",
+//   "Subota je dan za kupovinu",
+//   "Subota je dan za druzenje",
+//   "Subota je dan za kafu",
+// ];
 
-const BASE_URL = "https://api.quotable.io";
+export const BASE_URL = "https://api.quotable.io";
 
 function App() {
   /// const [count, setCount] = React.useState(0);
@@ -45,60 +46,51 @@ function App() {
   //   setCount(count - 1);
   // };
 
-  // const [name, setName] = useState("");
-  /// console.log(name);
-
-   //1. nacin za svaku input polje poseban state
-  // const [name,setName] = useState("");
-  // const [lastname,setLastname] = useState("");
-  // const [email,setEmail] = useState("");
-  // const [phone,setPhone] = useState("");
-  // const [hobi,setHobi] = useState("+381");
-
-  //2. nacin jedan state za sva input polja
-  // const [userInput, setUserInput] = useState({
-  //   name:"",
-  //   lastName:"",
-  //   email:"",
-  //   phone:"",
-  //   hobi:"",
-  // });
-
-  const [arr, setArr] = useState(poruke);
-  const reverseArr = () => {
-    const _arr = [...arr];
-    const reversed = _arr.reverse();
-    setArr(reversed);
-  };
 
 
-  const [quotes, setQuotes] = useState([]);
-  const [page, setPage] = useState(2);
+  // const [arr, setArr] = useState(poruke);
+  // const reverseArr = () => {
+  //   const _arr = [...arr];
+  //   const reversed = _arr.reverse();
+  //   setArr(reversed);
+  // };
 
-  const getQuotes = async()=>{
-    // const quotes = await fetch( `${BASE_URL} /quotes?page=${page}&tags=love|technology` )
-    const getQuotes = await fetch( `${BASE_URL} /quotes?page=2&tags=love|technology` )
-    const data = await quotes.json();
-    const results = data.results;
+
+  // const [quotes, setQuotes] = useState([]);
+  // const [page, setPage] = useState(2);
+
+  // const getQuotes = async()=>{
+  //   // const quotes = await fetch( `${BASE_URL} /quotes?page=${page}&tags=love|technology` )
+  //   const getQuotes = await fetch( `${BASE_URL} /quotes?page=2&tags=love|technology` )
+  //   const data = await quotes.json();
+  //   const results = data.results;
     
-    setQuotes(results); //kao asinhrona
-    console.log(data)
-    //console.log(quotes); vraca prazan niz
-  }
-  // getQuotes();
-  console.log(quotes[0]?.content);
+  //   setQuotes(results); //kao asinhrona
+  //   console.log(data)
+  //   //console.log(quotes); vraca prazan niz
+  // }
+  // // getQuotes();
+  // console.log(quotes[0]?.content);
   
 
-  useEffect(()=>{
-    getQuotes();
-  }, [page])
+  // useEffect(()=>{
+  //   getQuotes();
+  // }, [page])
+
+
+  const { token, setToken } = useContext(AppContext);
+  useEffect(() => {
+    const localToken = localStorage.getItem("token");
+    setToken(localToken);
+  }, []);
+
 
   return (
     <> {/* fragment - najcesce se koristi sa wrapovanje*/}
-      <div className="App">
-        <Navbar> {/* <P>samo za primer</P> */} </Navbar>
+      {/* <div className="App">
+        <Navbar></Navbar>
          <Greeting appName={"my first app"} username={"Hatidza Mahmutovic"} />
-        {/* <div 
+        <div 
         style={{
           marginLeft:"",
           display:"grid",
@@ -139,7 +131,7 @@ function App() {
           reviews={hotel.reviews}
           />)}
         </div> */}
-
+{/* 
          <Form/>
 
         <div
@@ -161,7 +153,7 @@ function App() {
             {arr.map((poruka) => (
             <p>{poruka}</p>
           ))}
-        </div>
+        </div> */}
 {/*         
         {
           teams.map((team)=>(
@@ -172,11 +164,12 @@ function App() {
             points={team.matches} 
             deleteTeam={()=> deleteTeam(team.id)}/>
           ))
-        } */}
-      </div>
+        } 
+      </div>  */}
 
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Form />} />
+        <Route path="/" element={token ? <Hotels /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-us" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
