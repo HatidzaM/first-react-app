@@ -1,8 +1,20 @@
-.hotels{
-    margin-Top:"100px";
+/* .hotels{
+    margin-top:"100px";
     display:"grid";
     grid-template-columns:"repeat(3, 430px)";
     justify-content:"center";
     grid-auto-rows:"minmax(280px, auto)";
-    grid-gap:"45px"
+    grid-gap:"45px";
+    justify-items: center
+} */
+.hotels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(250px, auto);
+    justify-items: center; 
+    text-decoration: none;
+}   
+a{
+    text-decoration: none;
+    color: black;
 }

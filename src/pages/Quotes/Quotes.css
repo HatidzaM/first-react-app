@@ -1,9 +1,13 @@
 .quote-container {
-    margin-top: 20px;
-    margin-left: 40px;
-    width: 100%;
+    margin-top: 60px;
+    margin-left: 80px;
+    /* width: 95%; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto, 1fr);
-    grid-gap: 20px;
+    grid-gap: 15px;
+
+    /* box-shadow: 2px 2px 6px rgba(75, 40, 215, 0.41),  -2px -2px 6px rgba(75, 40, 215, 0.41); */
 }
+
+

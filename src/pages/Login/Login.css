@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    box-shadow: 2px 2px 6px rgba(75, 40, 215, 0.41),  -2px -2px 6px rgba(75, 40, 215, 0.41);
   }
   form h1 {
     text-align: center;

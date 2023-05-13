@@ -6,8 +6,9 @@ import "./Hotels.css";
 export default function Hotels(){
     return(
         <div className="hotels">
-            {hotels.map((hotel)=>
-             <Hotels
+            {hotels.map((hotel)=>(
+                <a href={"hotels/" + hotel.id.toString()}>
+             <HotelCard
             key={hotel.id}
             imageURL={hotel.imageURL}
             name={hotel.name}
@@ -16,7 +17,8 @@ export default function Hotels(){
             description={hotel.description}
             rating={hotel.rating}
             reviews={hotel.reviews}
-             />)}
+                /> </a> 
+            ))}
         </div>
-    )
+    );
 }
