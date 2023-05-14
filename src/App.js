@@ -10,7 +10,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 // import teamsJSON from "./common/teams.json";
 // import TeamCard from "./components/cards/TeamCards/TeamCards";
 // import { useEffect } from "react";
-import Form from "./components/Form/Form";
+// import Form from "./components/Form/Form";
 import { Route, Routes } from "react-router-dom";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Hotels from "./pages/Hotels/Hotels";
@@ -179,11 +179,7 @@ function App() {
           <Route path="/teams" element={<ProtectedRoute><Teams /></ProtectedRoute>} />
           <Route path="/quotes" element={<ProtectedRoute><Quotes /></ProtectedRoute>} />
           <Route path="/hotels/:id" element={<ProtectedRoute><Hotel /></ProtectedRoute>} />
-        {/* <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/teams" element={<Teams />} />
-        <Route path="/quotes" element={<Quotes />} />
-        <Route path="/hotels/:id" element={<Hotel />} /> */}
+          <Route path="*" element={<p>Nepostojeca stranica</p>} />
         </Routes>
       </main>
       <Footer/>
