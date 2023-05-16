@@ -22,7 +22,7 @@
 
 
 .cardContainer2 {
-    margin-top: 30px;
+    margin-top: 50px;
     margin: auto;
     width: 80%;
     height: 80px;
@@ -30,6 +30,8 @@
     justify-content: space-around;
     align-items: flex-start;
     gap: 6px;
+    /* background-color: brown; */
+
 }
 .card2 {
     margin-top: 50px;
@@ -43,6 +45,11 @@
 }
 
 .info{
-    width: 100%;
+    width: 30%;
     text-align: center;
+}
+
+.dugm{
+    width: 150px;
+    margin-top: 5px;
 }

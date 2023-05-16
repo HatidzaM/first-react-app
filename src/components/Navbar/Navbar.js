@@ -63,9 +63,11 @@ function Navbar(props) {
               width: "fit-content",
               backgroundColor: "lightblue",
               padding: "7px",
-              borderRadius: "10px",
+              borderRadius: "50px",
               color: "darkblue",
               textDecoration: "none",
+              opacity: "60%",
+              border: "none"
               // margin: "20px",
             }}
             onClick={() => {

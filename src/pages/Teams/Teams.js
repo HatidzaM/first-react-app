@@ -31,7 +31,7 @@ export default function Teams() {
           />
         ))}
         <Link to={"/quotes"}>Vidi citate</Link>
-        <button onClick={() => navigation("/hotels")}>Hotels</button>
+        <button className="dugme" onClick={() => navigation("/hotels")}>Hotels</button>
       </div>
     );
 }

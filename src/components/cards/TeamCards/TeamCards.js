@@ -26,11 +26,11 @@ function TeamCard({name, matches, points, deleteTeam, information, id, extended,
         <p>{name}</p>
         <p>Broj odigranih meceva: {matches}</p>
         <p>Broj poena: {points}</p>
-        <button onClick={deleteTeam}>Izbrisi tim</button>
-        <button onClick={()=>{
+        <button className="dugm" onClick={deleteTeam}>Izbrisi tim</button>
+        <button className="dugm" onClick={()=>{
             setClosed(!closed)
         }}>
-            {closed ? <span>Prokazi vise</span> : <span>Prikazi manje</span>}
+            {closed ? <span>Prikazi vise</span> : <span>Prikazi manje</span>}
         </button>
             {!closed &&(
             <div className="info">
